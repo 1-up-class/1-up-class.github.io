@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face{
+    font-family: pixelBoi;
+    src: url(PixelOperator.ttf);
+}
+
+#main_title{
+    text-align: center;
+    font-size: 200px;
+    font-family: PixelOperator;
+}
+
+#mushroom{
+    position: absolute;
+    display: block;
+    width: 200px;
+}
+
+p{
+    width: 300px;
+    margin: 0 auto;
+}
