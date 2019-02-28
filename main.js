@@ -10,15 +10,13 @@ function Mushroom(x, y){
     this.img.style.top = "-200px";
     this.img.style.left = "-200px";
     this.img.src = "img/1-up-mushroom.png";
-    this.img.style.width = "";
     this.img.style.width = this.size + "px";
     this.img.style.display = "block";
     this.img.style.position = "absolute";
-    this.img.style.zIndex = "-1";
+    this.img.style.zIndex = Math.floor(this.size) + ""; 
+    console.log(this.img.style.zIndex);
     this.speed = this.size / 200;
-
-    this.zIndex = this.size; 
-
+    this.speedModifier = 2;
     document.body.append(this.img);
 
     this.spawn = function(){
@@ -27,8 +25,8 @@ function Mushroom(x, y){
     }
 
     this.move = function(){
-        this.x += this.speed;
-        this.y += this.speed;
+        this.x += this.speed * this.speedModifier;
+        this.y += this.speed * this.speedModifier;
         this.img.style.left = this.x + "px";
         this.img.style.top = this.y + "px";
         this.img.style.width = this.size + "px";
@@ -42,7 +40,7 @@ function spawnMushroom(){
 function draw(){
     for(var i = 0; i < mushroomVIPList.length; i++){
         mushroomVIPList[i].move();
-        console.log(Math.floor(mushroomVIPList[i].zIndex));
+        // console.log(Math.floor(mushroomVIPList[i].zIndex));
     }
 }
 
