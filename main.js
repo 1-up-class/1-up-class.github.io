@@ -9,14 +9,16 @@ function Mushroom(x, y){
     this.img = document.createElement("IMG");
     this.img.style.top = "-200px";
     this.img.style.left = "-200px";
-    this.img.src = "img/1-up-mushroom.png";
+    this.img.src = "img/mushroom.png";
+    this.img.style.transform = "rotate(120deg)";
     this.img.style.width = this.size + "px";
     this.img.style.display = "block";
     this.img.style.position = "absolute";
     this.img.style.zIndex = Math.floor(this.size) + ""; 
-    console.log(this.img.style.zIndex);
+    // console.log(this.img.style.zIndex);
     this.speed = this.size / 200;
-    this.speedModifier = 2;
+    this.speedModifierX = 3;
+    this.speedModifierY = 2;
     document.body.append(this.img);
 
     this.spawn = function(){
@@ -25,8 +27,8 @@ function Mushroom(x, y){
     }
 
     this.move = function(){
-        this.x += this.speed * this.speedModifier;
-        this.y += this.speed * this.speedModifier;
+        this.x += this.speed * this.speedModifierX;
+        this.y += this.speed * this.speedModifierY;
         this.img.style.left = this.x + "px";
         this.img.style.top = this.y + "px";
         this.img.style.width = this.size + "px";
