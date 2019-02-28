@@ -11,24 +11,24 @@ function Mushroom(x, y){
     this.img.style.left = "-200px";
     this.img.src = "img/1-up-mushroom.png";
     this.img.style.width = "";
-    // this.img.onload = function(){
-    //     console.log(this.width);
-    //     // this.img.width = "200px";
-    // }
     this.img.style.width = this.size + "px";
     this.img.style.display = "block";
     this.img.style.position = "absolute";
-    this.img.style.zindex = "-1";
+    this.img.style.zIndex = "-1";
+    this.speed = this.size / 200;
+
+    this.zIndex = this.size; 
 
     document.body.append(this.img);
+
     this.spawn = function(){
         this.img.style.left = this.x + "px";
         this.img.style.top = this.y + "px";
     }
 
     this.move = function(){
-        this.x += 4;
-        this.y += 4;
+        this.x += this.speed;
+        this.y += this.speed;
         this.img.style.left = this.x + "px";
         this.img.style.top = this.y + "px";
         this.img.style.width = this.size + "px";
@@ -39,23 +39,15 @@ function spawnMushroom(){
     mushroomVIPList.push(new Mushroom(Math.random() * 1000 * -1, Math.random() * 1000 * -1));
 }
 
-function mushroomRain(){
-
-
-}
-
 function draw(){
     for(var i = 0; i < mushroomVIPList.length; i++){
         mushroomVIPList[i].move();
+        console.log(Math.floor(mushroomVIPList[i].zIndex));
     }
 }
 
 function setup(){
-    // var mushroom = document.getElementById("mushroom");
-    // mushroom.style.left = "0px";
-    // mushroom.style.top = "0px";
     setInterval(function(){draw();}, 16);
-
 }
 
 

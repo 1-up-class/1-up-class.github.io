@@ -3,15 +3,20 @@
     padding: 0;
 }
 
+body{
+    font-family: PixelOperator;
+    height: 100vh;
+}
+
 @font-face{
-    font-family: pixelBoi;
+    font-family: PixelOperator;
     src: url(PixelOperator.ttf);
 }
 
 #main_title{
-    text-align: center;
     font-size: 200px;
-    font-family: PixelOperator;
+    text-align: center;
+
 }
 
 #mushroom{
@@ -20,7 +25,11 @@
     width: 200px;
 }
 
-p{
-    width: 300px;
-    margin: 0 auto;
+
+p {
+    /* width: 300px; */
+    font-size: 40px;
+    /* margin: 0 auto; */
+    text-align: center;
+    z-index: -2;
 }
