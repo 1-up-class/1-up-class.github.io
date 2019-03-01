@@ -32,6 +32,8 @@ function Mushroom(x, y){
     this.move = function(){
         this.x += this.speed * this.speedModifierX;
         this.y += this.speed * this.speedModifierY;
+        this.hueValue = (this.x / window.innerWidth) * 360;
+        this.img.style.filter = "hue-rotate(" + this.hueValue + "deg)";
         this.img.style.left = this.x + "px";
         this.img.style.top = this.y + "px";
         this.img.style.width = this.size + "px";
